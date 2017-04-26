@@ -2,3 +2,5 @@ version: "2"
 services:
   main:
     build: .
+  main2:
+    build: .
