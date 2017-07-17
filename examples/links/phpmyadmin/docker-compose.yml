@@ -1,0 +1,18 @@
+version: "2"
+services:
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8003:80"
+    links:
+      - mysql:database
+    environment:
+      - PMA_HOST=database
+      - PMA_USER=root
+      - PMA_PASSWORD=pass123
+  mysql:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=pass123
+    volumes:
+      - ./mysql-data:/var/lib/mysql
